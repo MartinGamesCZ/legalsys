@@ -7,6 +7,15 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
+        <ListBox x:Name="invList" Margin="0,74,0,0" MouseDoubleClick="invList_DoubleClick">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding}" />
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <Label Content="Faktury" HorizontalAlignment="Left" FontSize="24" Margin="10,17,0,0" VerticalAlignment="Top" Height="52" Width="136"/>
+        <Button Content="Nová faktura" HorizontalAlignment="Left" Margin="648,15,0,0" VerticalAlignment="Top" Height="46" Width="128"/>
 
     </Grid>
 </Window>

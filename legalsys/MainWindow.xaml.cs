@@ -1,4 +1,7 @@
-﻿using System.Text;
+﻿using legalsys.Database;
+using legalsys.Database.Models;
+using legalsys.Invoice;
+using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -16,9 +19,32 @@ namespace legalsys
     /// </summary>
     public partial class MainWindow : Window
     {
+        private InvoiceContext invoiceContext = new InvoiceContext();
+        private ContextManager invoiceContextManager;
+
+        private InvoiceGenerator invoiceGenerator;
+
         public MainWindow()
         {
+            this.invoiceContextManager = new ContextManager(this.invoiceContext);
+            this.invoiceGenerator = new InvoiceGenerator(this.invoiceContextManager);
+
             InitializeComponent();
+
+            this.LoadInvoiceList();
+        }
+
+        private void LoadInvoiceList()
+        {
+            invList.ItemsSource = this.invoiceContextManager.GetAll();
+            invList.Items.Refresh();
+        }
+
+        private void invList_DoubleClick(object sender, SelectionChangedEventArgs e)
+        {
+            InvoiceEntity? entity = invList.SelectedItem as InvoiceEntity;
+
+            MessageBox.Show(entity.ToString());
         }
     }
 }
