@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace legalsys.Database
 {
-    class ContextManager
+    public class ContextManager
     {
         private readonly InvoiceContext context;
 
@@ -18,7 +18,8 @@ namespace legalsys.Database
 
         public void Add(InvoiceEntity entity)
         {
-            context.Add(entity);
+            this.context.InvoiceSet.Add(entity);
+            this.context.SaveChanges();
         }
 
         public List<InvoiceEntity> GetAll()

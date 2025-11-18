@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace legalsys.Database
 {
-    class InvoiceContext : DbContext
+    public class InvoiceContext : DbContext
     {
         public DbSet<InvoiceEntity> InvoiceSet { get; set; }
 

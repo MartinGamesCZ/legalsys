@@ -5,13 +5,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-enum ServiceName
+public enum ServiceName
 {
     FinancialAdvisory = 0,
     LegalAdvisory = 1
 };
 
-enum Currency
+public enum Currency
 {
     USD = 0,
     CZK = 1
@@ -19,7 +19,7 @@ enum Currency
 
 namespace legalsys.Database.Models
 {
-    class InvoiceEntity : INotifyPropertyChanged
+    public class InvoiceEntity : INotifyPropertyChanged
     {
         public int Id { get; set; }
         public string CustomerName { get; set; }

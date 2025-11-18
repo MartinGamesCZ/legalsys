@@ -40,11 +40,23 @@ namespace legalsys
             invList.Items.Refresh();
         }
 
-        private void invList_DoubleClick(object sender, SelectionChangedEventArgs e)
+        private void invList_DoubleClick(object sender, RoutedEventArgs e)
         {
             InvoiceEntity? entity = invList.SelectedItem as InvoiceEntity;
 
-            MessageBox.Show(entity.ToString());
+            this.invoiceGenerator.generate(entity);
+        }
+
+        private void btnAdd_Click(object sender, RoutedEventArgs e)
+        {
+            var window = new NewInvoice(this.invoiceContextManager);
+
+            window.Closed += (s, e) =>
+            {
+                this.LoadInvoiceList();
+            };
+
+            window.Show();
         }
     }
 }
