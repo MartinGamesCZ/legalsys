@@ -103,14 +103,9 @@ namespace legalsys
 
         private void FillInTaxRate()
         {
-            // Update to use the first selected service for tax rate calculation
-            if (this.currency is not null && this.sService.SelectedItems.Count > 0)
+            if (this.currency is not null)
             {
-                var firstSelectedItem = this.sService.SelectedItems[0];
-                if (firstSelectedItem is KeyValuePair<ServiceName, string> pair)
-                {
-                    this.iPrice.Text = Config.ServicePrices[pair.Key][this.currency.Value].ToString();
-                }
+                this.iPrice.Text = Config.Prices[this.currency.Value].ToString();
             }
         }
     }

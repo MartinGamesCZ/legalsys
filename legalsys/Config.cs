@@ -20,18 +20,11 @@ namespace legalsys
             [Currency.USD] = "Americký dolar"
         };
 
-        public static readonly Dictionary<ServiceName, Dictionary<Currency, int>> ServicePrices = new()
+        public static readonly Dictionary<Currency, int> Prices = new()
         {
-            [ServiceName.FinancialAdvisory] = new()
-            {
-                [Currency.CZK] = 6000,
-                [Currency.USD] = 290
-            },
-            [ServiceName.LegalAdvisory] = new()
-            {
-                [Currency.CZK] = 3000,
-                [Currency.USD] = 145
-            },
+ 
+            [Currency.CZK] = 3000,
+            [Currency.USD] = 145
         };
     }
 }

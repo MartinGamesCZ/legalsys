@@ -15,19 +15,19 @@
         <Label Content="IČO" HorizontalAlignment="Left" Margin="10,108,0,0" VerticalAlignment="Top"/>
         <TextBox HorizontalAlignment="Center" Margin="0,178,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" PreviewTextInput="NumberValidationTextBox" Width="380" x:Name="iHours"/>
         <Label Content="Hodiny" HorizontalAlignment="Left" Margin="10,152,0,0" VerticalAlignment="Top" />
-        <ComboBox HorizontalAlignment="Center" Margin="0,227,0,0" VerticalAlignment="Top" Width="380" x:Name="sService" SelectionChanged="sService_SelectionChanged">
-            <ComboBox.ItemTemplate>
+        <ListBox HorizontalAlignment="Center" Margin="0,227,0,0" VerticalAlignment="Top" Width="380" x:Name="sService" Height="43" SelectionMode="Multiple">
+            <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">
                         <TextBlock Text="{Binding Value}" />
                     </StackPanel>
                 </DataTemplate>
-            </ComboBox.ItemTemplate>
-        </ComboBox>
+            </ListBox.ItemTemplate>
+        </ListBox>
         <Label Content="Služba" HorizontalAlignment="Left" Margin="10,201,0,0" VerticalAlignment="Top" />
-        <TextBox HorizontalAlignment="Left" Margin="10,275,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" PreviewTextInput="NumberValidationTextBox" x:Name="iPrice" Width="157"/>
-        <Label Content="Hodinová sazba" HorizontalAlignment="Left" Margin="10,249,0,0" VerticalAlignment="Top" />
-        <ComboBox HorizontalAlignment="Left" Margin="172,273,0,0" VerticalAlignment="Top" Width="171" x:Name="sCurrency">
+        <TextBox HorizontalAlignment="Left" Margin="11,311,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" PreviewTextInput="NumberValidationTextBox" x:Name="iPrice" Width="157"/>
+        <Label Content="Hodinová sazba" HorizontalAlignment="Left" Margin="11,285,0,0" VerticalAlignment="Top" />
+        <ComboBox HorizontalAlignment="Left" Margin="173,309,0,0" VerticalAlignment="Top" Width="171" x:Name="sCurrency" SelectionChanged="sCurrency_SelectionChanged">
             <ComboBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">
